@@ -1,0 +1,26 @@
+.header {
+    background: $true-blue;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.header-title {
+    margin: 0px;
+    padding: $m-size;
+    font-size: $ml-size;
+    font-weight: 300;
+}
+
+.header-title::after{
+    content: "BETA";
+    font-size: $s-size;
+    padding: 4px;
+}
+
+.logo {
+    height: $m-size;
+    padding-right: 10px;
+}

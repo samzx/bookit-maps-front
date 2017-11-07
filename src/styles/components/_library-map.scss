@@ -1,0 +1,40 @@
+.library-map-container {
+    box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: $sidebar-width; top: $header-height; right: 0; bottom: 0;
+    height: calc(100% - #{$header-height});
+    width: calc(100% - #{$sidebar-width});
+    overflow: hidden;
+    zoom: 1;
+}
+
+@media (max-width: 480px){
+    .library-map-container {
+        left: 0;
+        width: 100%;
+        zoom: 0.25;
+    }
+}
+
+.library-map{
+    position: absolute;
+    transform-origin: top left;
+    
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    z-index: -1;
+}
+
+.library-map-img{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    z-index: -1;
+}
