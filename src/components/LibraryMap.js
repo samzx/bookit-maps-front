@@ -1,9 +1,8 @@
 import React from 'react';
-import Marker from './Marker';
-import baillieu from '../images/1.svg';
+import MapOverlay from '../components/MapOverlay';
+import MapBackground from '../components/MapBackground';
 
-import { baillieu_g, bailleu_l1, bailleu_lg } from '../locations/baillieu';
-
+// Put into state?
 const sidebarWidth = 178;
 const headerHeight = 59;
 
@@ -126,25 +125,8 @@ class LibraryMap extends React.Component{
                         transform: `scale(${this.state.zoom}, ${this.state.zoom})`
                     }}
                 >
-                    <div> {/* MAP OVERLAY */}
-                        {
-                            Object.keys(baillieu_g).map((comp, index) => (
-                                    <Marker 
-                                        key={"computer-" + index}
-                                        x={baillieu_g[comp]["x"]}
-                                        y={baillieu_g[comp]["y"]} 
-                                    />
-                            ))
-                        }
-                    </div>
-                    <div> {/* MAP BACKGROUND */}
-                        <img 
-                            src={baillieu}
-                            draggable="false"
-                            className="library-map-img"
-                            onLoad={this.onImgLoad}
-                        />
-                    </div>
+                    <MapOverlay />
+                    <MapBackground onImgLoad={this.onImgLoad} />
                 </div>
             </div>
         );
