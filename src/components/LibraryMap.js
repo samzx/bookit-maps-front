@@ -17,7 +17,7 @@ class LibraryMap extends React.Component{
             y:0
         },
         clicked: false,
-        zoom: 0.5,
+        zoom: 1,
         imageDimensions: {}
     };
 
@@ -88,7 +88,7 @@ class LibraryMap extends React.Component{
                     return;
                 }
 
-                if(prevState.zoom + scalechange < 0.35 && scalechange < 0){
+                if(prevState.zoom + scalechange < 1 && scalechange < 0){
                     return;
                 }
 

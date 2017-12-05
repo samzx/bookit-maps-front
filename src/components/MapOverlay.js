@@ -8,8 +8,7 @@ const getBookings = () => {
     
     const username = "zxie3";
     const password = ""
-    const url = "https://sit-maps-api-dev.cy.id.au/bookings/zxie3/";
-    // const url = "https://sit-maps-api-dev.cy.id.au/bookings";
+    const url = "https://sit-maps-api-dev.cy.id.au/bookings/?format=json";
     
     let headers = new Headers();
     headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
@@ -17,7 +16,6 @@ const getBookings = () => {
     fetch(url, {
         method: "GET",
         headers,
-        mode: "cors"
     })
     .then((resp) => {
         return resp.json();
@@ -38,6 +36,8 @@ class MapOverlay extends React.Component{
     }
 
     componentDidMount(){
+        // TODO: Fetch should send data to redux store. Only then should we query the data. (De-coupling data)
+
         const url = "https://sit-maps-api-dev.cy.id.au/resources/?format=json";
 
         fetch(url, {
@@ -91,6 +91,8 @@ class MapOverlay extends React.Component{
                 return "green";
             case "IN_USE":
                 return "red";
+            case "YOUR_BOOKING":
+                return "yellow"
             default:
                 return "grey";
         }

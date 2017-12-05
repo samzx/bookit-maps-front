@@ -1,13 +1,13 @@
 .header {
     background: $true-blue;
-    color: white;
     position: relative;
-    display: flex;
-    justify-content: space-between;
     z-index: 2;
+    display: flex;
+    font-weight: 500;
 }
 
 .header-title {
+    color: white;
     margin: 0px;
     padding: $m-size;
     font-size: $ml-size;
@@ -17,10 +17,33 @@
 .header-title::after{
     content: "BETA";
     font-size: $s-size;
-    padding: 4px;
+    padding: $t-size;
 }
 
-.logo {
-    height: $m-size;
-    padding-right: 10px;
+.nav-listing{
+    display: flex;
+    margin-left: $ss-size;
+}
+
+.nav-item {
+    color: $light-blue;
+    text-decoration: none;
+    line-height: $xl-size;
+    margin: auto $s-size auto $s-size;
+    border-top: $t-size solid transparent;
+    border-bottom: $t-size solid transparent;
+}
+
+.nav-item__icon {
+    margin-right: $ss-size;
+}
+
+.nav-item--is-active {
+    border-bottom: $t-size solid lighten($true-blue, 10);
+    color: $off-white;
+}
+
+.nav-sign-out{
+    margin-left: auto;
+    color: $off-white;
 }
