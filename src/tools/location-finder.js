@@ -1,6 +1,7 @@
 import React from 'react';
 import Marker from '../components/Marker';
 import site from '../images/1.svg';
+
 /**
  * How to use:
  *  - in app.js

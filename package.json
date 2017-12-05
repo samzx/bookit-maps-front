@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "test": "jest"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -20,6 +21,7 @@
     "css-loader": "0.28.4",
     "file-loader": "^1.1.5",
     "font-awesome": "^4.7.0",
+    "jest": "^21.2.1",
     "live-server": "^1.2.0",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",

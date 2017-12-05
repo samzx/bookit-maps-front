@@ -41,6 +41,7 @@
 .nav-item--is-active {
     border-bottom: $t-size solid lighten($true-blue, 10);
     color: $off-white;
+    line-height: 5.0rem;
 }
 
 .nav-sign-out{
