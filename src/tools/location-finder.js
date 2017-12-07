@@ -1,23 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Marker from '../components/Marker';
-import site from '../images/1.svg';
 
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
 
-/**
- * How to use:
- *  - in app.js
- *      -   import LocationFinder from './tools/location-finder';
-        -   ReactDOM.render(<LocationFinder />, document.getElementById("app"));
-    - Change site to image you wish to map
-    - yarn run dev-server
-    - Click screen to mark a points
-    - Press Z to undo marking a point
-    - Press Enter to output marks that can be imported to locations
-    - Copy the output in the console, and manually add id locations in locations folder 
- */
+// CHANGE SITE HERE:
+import site from '../images/1.svg';
+
 class LocationFinder extends React.Component {
 
     state = {
@@ -52,8 +42,6 @@ class LocationFinder extends React.Component {
     handleLocation = (e) => {
         e.persist();
         this.setState((prevState)=>{
-            // const combined = prevState.positions + `{x: ${e.pageX}, y: ${e.pageY}}\n`;
-            // return {positions: combined};
             return {
                 positions: [
                     ...prevState.positions,

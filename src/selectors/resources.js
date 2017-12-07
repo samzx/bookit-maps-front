@@ -1,6 +1,6 @@
 // Calling this function selects relevant resources that are filtered accordingly
 
-export default (resources = [], {text, library, floor}) => {
+const selectResources = (resources = [], {text, library, floor}) => {
     if(resources.length > 0){
 
         // Fetch all data from specific library
@@ -15,6 +15,7 @@ export default (resources = [], {text, library, floor}) => {
             objects = objects.concat(results[i].resources);
         }
 
+        // Filter by text if library exists
         if(!!library){
             const textFiltered = objects.filter((resource) => {
                 const textMatch = resource.name.toLowerCase().includes(text.toLowerCase());
@@ -23,10 +24,10 @@ export default (resources = [], {text, library, floor}) => {
 
             return textFiltered;
         }
-    
-        // Render specified locations
         return objects;
     } else {
         return resources;
     }
 }
+
+export default selectResources;
