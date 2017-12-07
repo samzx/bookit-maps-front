@@ -37,6 +37,17 @@ yarn run dev-server
 ```
 visit `localhost:8080` in browser to see it run
 
+## Tools
+Configure `location-finder.js` to import the correct svg to map.
+Run the local dev server:
+```
+yarn run location-finder
+```
+visit `localhost:8080` and click on the map to mark a location.
+* Press `Z` to undo last mark
+* Press `Enter` to print marked locations to console
+* Copy locations from console to relevant file in `locations` folder. Provide id's in the form of `{$id}:{x:$x, y:$y}` eg. `804:{x: 501, y: 531},` 
+
 ## Testing
 Testing done through jest. All test files can be found under `src/tests/`.
 To run tests, run in terminal:
