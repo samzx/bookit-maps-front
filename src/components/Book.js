@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import NotFound from './NotFoundPage';
 
-const Dashboard = () => (
+const Book = (props) => (
     <div>
-        <p>Book has nothing here at the moment. <Link to="/"> Looking to browse? </Link></p>
+        {
+            !!props.user.username ?
+            <p>Book has nothing here at the moment. <Link to="/"> Looking to browse? </Link></p>
+            :
+            <NotFound />
+        }
     </div>
 );
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+    return { user: state.user };
+}
+
+export default connect(mapStateToProps)(Book);

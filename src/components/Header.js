@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logUserOut } from '../actions/user'
 import logo from '../images/favicon.png';
 import FA from 'react-fontawesome';
-
-// Until authentication is implemented, default logged out.
-let loggedIn = false;
 
 const Header = (props) => (
     <div className="header" >
@@ -21,7 +20,7 @@ const Header = (props) => (
             }
             {
                 /* Choose a library and book a computer with timelines */
-                loggedIn && 
+                !!props.user.username && 
                 <NavLink to="/book" className="nav-item" activeClassName="nav-item--is-active">
                     <FA name="bookmark" className="nav-item__icon" />
                     <span className="nav-item__description" >Book</span> 
@@ -30,13 +29,13 @@ const Header = (props) => (
         </div>
         {
             /* Allows users to sign out. Possibly settings (profile) in future */
-            loggedIn ?
-            <NavLink to="/" className="nav-item nav-sign-out" onClick={() => loggedIn=false} >
+            !!props.user.username ?
+            <NavLink to="/" className="nav-item nav-sign-out" onClick={() => props.dispatch(logUserOut())} >
                 <FA name="sign-out" className="nav-item__icon" />
                 <span className="nav-item__description" >Sign Out</span> 
             </NavLink>
             :
-            <NavLink to="/sign-in" className="nav-item nav-sign-out" activeClassName="nav-item--is-active" onClick={() => loggedIn=true} >
+            <NavLink to="/sign-in" className="nav-item nav-sign-out" activeClassName="nav-item--is-active" >
                 <FA name="sign-in" className="nav-item__icon" />
                 <span className="nav-item__description" >Sign In</span> 
             </NavLink>
@@ -44,4 +43,8 @@ const Header = (props) => (
     </div>
 );
 
-export default Header;
+const mapStateToProps = (state) => {
+    return { user: state.user }
+}
+
+export default withRouter(connect(mapStateToProps)(Header));

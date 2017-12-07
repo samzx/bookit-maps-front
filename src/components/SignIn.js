@@ -1,10 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { logUserIn } from '../actions/user';
 import { Link } from 'react-router-dom';
 
-const SignIn = (props) => (
-    <div>
-        <p> Sign in page not implemented. You've been automatically signed in. <Link to="/"> Looking to browse? </Link></p>
-    </div>
-);
+class SignIn extends React.Component{
+    SpoofSignIn = () => {
+        this.props.dispatch(logUserIn("Test Dummy"));
+        this.props.history.push("/");
+    }
 
-export default SignIn;
+    render(){
+        return (
+            <div>
+                <p> Sign in page not implemented. <button onClick={this.SpoofSignIn} >Spoof it</button></p>
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return { user: state.user };
+}
+
+export default connect(mapStateToProps)(SignIn);

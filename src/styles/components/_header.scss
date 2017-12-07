@@ -49,6 +49,11 @@
     color: $off-white;
 }
 
+.nav-item__description{
+    margin-left: $ss-size;
+    margin-right: $ss-size;
+}
+
 @media (max-width: 480px){
     .nav-item__description{
         display: none;

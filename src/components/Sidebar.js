@@ -1,12 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Bookings from './Bookings';
 import Filters from './Filters';
 
-const Sidebar = () => (
+const Sidebar = (props) => (
     <div className="sidebar">
         <Filters />
-        <Bookings />
+        {
+            !!props.user.username && <Bookings />
+        }
     </div>
 );
 
-export default Sidebar;
+const mapStateToProps = (state) => {
+    return { user: state.user };
+};
+
+export default connect(mapStateToProps)(Sidebar);
