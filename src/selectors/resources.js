@@ -18,7 +18,12 @@ const selectResources = (resources = [], {text, library, floor}) => {
         // Filter by text if library exists
         if(!!library){
             const textFiltered = objects.filter((resource) => {
-                const textMatch = resource.name.toLowerCase().includes(text.toLowerCase());
+                const textMatch = resource.name
+                .toLowerCase()
+                .replace(/\W/g, '')
+                .includes(
+                    text.toLowerCase().replace(/\W/g, '')
+                );
                 return textMatch;
             });
 

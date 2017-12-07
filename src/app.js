@@ -6,6 +6,7 @@ import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { setLibraryFilter, setFloorFilter, setTextFilter } from './actions/filters';
 import { updateResources } from './actions/resources';
+import { updateBookings } from './actions/bookings';
 import selectResources from './selectors/resources';
 
 import fetchResources from './fetch/resources';
@@ -20,6 +21,12 @@ const store = configureStore();
     store.dispatch(setLibraryFilter("Baillieu"));
     store.dispatch(setFloorFilter("G"));
     store.dispatch(setTextFilter(""));
+
+    store.dispatch(updateBookings([
+        "GN-1",
+        "GN-2",
+        "Other"
+    ]));
 // TEMP
 
 let jsx = (

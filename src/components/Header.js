@@ -12,26 +12,11 @@ const Header = (props) => (
             <h1 className="header-title"> BookIT Maps</h1>
         </div>
         <div className="nav-listing">
-            {   
-                /* Overview of user's bookings */
-                loggedIn &&
-                <NavLink to="/" className="nav-item" activeClassName="nav-item--is-active" exact={true} > 
-                    <FA name="tachometer" className="nav-item__icon" />
-                    <span className="nav-item__description" >Dashboard</span> 
-                </NavLink>
-            }
             {
                 /* Allows users to browse library maps, with users booking on sidebar, click to book */
-                <NavLink to="/browse" className="nav-item" activeClassName="nav-item--is-active">
+                <NavLink to="/" className="nav-item" activeClassName="nav-item--is-active" exact={true} >
                     <FA name="map" className="nav-item__icon" />
                     <span className="nav-item__description" >Browse</span> 
-                </NavLink>
-            }
-            {
-                /* You can type the name of the computer, and will show you the location */
-                <NavLink to="/locate" className="nav-item" activeClassName="nav-item--is-active">
-                    <FA name="search" className="nav-item__icon" />
-                    <span className="nav-item__description" >Locate</span> 
                 </NavLink>
             }
             {
@@ -46,7 +31,7 @@ const Header = (props) => (
         {
             /* Allows users to sign out. Possibly settings (profile) in future */
             loggedIn ?
-            <NavLink to="/browse" className="nav-item nav-sign-out" onClick={() => loggedIn=false} >
+            <NavLink to="/" className="nav-item nav-sign-out" onClick={() => loggedIn=false} >
                 <FA name="sign-out" className="nav-item__icon" />
                 <span className="nav-item__description" >Sign Out</span> 
             </NavLink>

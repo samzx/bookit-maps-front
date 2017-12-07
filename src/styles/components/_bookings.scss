@@ -1,21 +1,3 @@
-.bookings {
-    background: $off-white;
-    position: absolute;
-    left:0;right:0;
-    width: $sidebar-width;
-    height: calc(100% - #{$header-height});
-    z-index: 1;
-}
-
-.bookings-title {
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 0;
-    margin-top: $s-size;
-    padding: $m-size;
-    color: $light-blue;
-}
-
 .bookings-listing {
     color: $dark-blue;
     padding: $m-size;
@@ -26,10 +8,4 @@
 
 .bookings-listing:hover{
     background: darken($off-white, 3%);
-}
-
-@media (max-width: 480px){
-    .bookings {
-        display: none;
-    }
 }

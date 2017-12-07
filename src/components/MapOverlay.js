@@ -39,6 +39,7 @@ class MapOverlay extends React.Component{
         return(
             <div>
                 {
+                    // Check if filters down to 1 resource, if so, add some blinking to marker
                     this.props.resources.map((resource) => this.createMarker(resource))
                 }
             </div>

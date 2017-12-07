@@ -17,6 +17,7 @@ class LibraryMap extends React.Component{
             y:0
         },
         clicked: false,
+        touched: false,
         zoom: 1,
         imageDimensions: {}
     };
@@ -60,18 +61,26 @@ class LibraryMap extends React.Component{
         // TODO: add inertia
         // TODO: add lock (so image can't be dragged completely out)
         // FEATURE: rotate depending on entrance (pick entrance, and will rotate map bottom as enrance) and show location
-
-        if(this.state.clicked){
+        console.log(this.state.mouse.x + ', ' + this.state.mouse.y)
+        if(this.state.clicked || this.state.touched){
+            let interactX, interactY;
+            if(this.state.clicked){
+                interactX = e.clientX;
+                interactY = e.clientY;
+            } else if (this.state.touched){
+                interactX = e.originalEvent.touches[0].pageX;
+                interactY = e.originalEvent.touches[0].pageY;
+            }
             this.setState((prevState)=> ({
                 // Move map according to delta in mouse position
                 map: {
-                    x: prevState.map.x + (e.clientX - prevState.mouse.x),
-                    y: prevState.map.y + (e.clientY - prevState.mouse.y)
+                    x: prevState.map.x + (interactX - prevState.mouse.x),
+                    y: prevState.map.y + (interactY - prevState.mouse.y)
                 },
                 // Record new mouse position
                 mouse: {
-                    x: e.clientX,
-                    y: e.clientY
+                    x: interactX,
+                    y: interactY
                 }
             }));
         }
@@ -110,10 +119,19 @@ class LibraryMap extends React.Component{
         return (
             <div 
                 className="library-map-container"
-                onMouseDown={(e) => this.handleClick(e)} 
+
+                onMouseDown={(e) => this.handleClick(e)}
+                onTouchStart={(e) => this.handleClick(e)}
+
                 onMouseMove={(e) => this.handleMove(e)}
+                onTouchMove={(e) => this.handleMove(e)}
+
                 onMouseUp = {this.handleUnclick}
                 onMouseLeave = {this.handleUnclick}
+                onTouchCancel = {this.handleUnclick}
+                onTouchEnd = {this.handleUnclick}
+
+                
                 onWheel={(e) => this.handleZoom(e)}
             >
                 <div 
