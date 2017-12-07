@@ -1,6 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Marker from '../components/Marker';
 import site from '../images/1.svg';
+
+import 'normalize.css/normalize.css';
+import '../styles/styles.scss';
 
 /**
  * How to use:
@@ -14,7 +18,7 @@ import site from '../images/1.svg';
     - Press Enter to output marks that can be imported to locations
     - Copy the output in the console, and manually add id locations in locations folder 
  */
-export default class LocationFinder extends React.Component {
+class LocationFinder extends React.Component {
 
     state = {
         positions: []
@@ -88,3 +92,5 @@ export default class LocationFinder extends React.Component {
         );
     }
 }
+
+ReactDOM.render(<LocationFinder />, document.getElementById("app"));

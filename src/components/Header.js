@@ -17,21 +17,21 @@ const Header = (props) => (
                 loggedIn &&
                 <NavLink to="/" className="nav-item" activeClassName="nav-item--is-active" exact={true} > 
                     <FA name="tachometer" className="nav-item__icon" />
-                    Dashboard 
+                    <span className="nav-item__description" >Dashboard</span> 
                 </NavLink>
             }
             {
                 /* Allows users to browse library maps, with users booking on sidebar, click to book */
                 <NavLink to="/browse" className="nav-item" activeClassName="nav-item--is-active">
                     <FA name="map" className="nav-item__icon" />
-                    Browse
+                    <span className="nav-item__description" >Browse</span> 
                 </NavLink>
             }
             {
                 /* You can type the name of the computer, and will show you the location */
                 <NavLink to="/locate" className="nav-item" activeClassName="nav-item--is-active">
                     <FA name="search" className="nav-item__icon" />
-                    Locate
+                    <span className="nav-item__description" >Locate</span> 
                 </NavLink>
             }
             {
@@ -39,7 +39,7 @@ const Header = (props) => (
                 loggedIn && 
                 <NavLink to="/book" className="nav-item" activeClassName="nav-item--is-active">
                     <FA name="bookmark" className="nav-item__icon" />
-                    Book
+                    <span className="nav-item__description" >Book</span> 
                 </NavLink>
             }
         </div>
@@ -48,12 +48,12 @@ const Header = (props) => (
             loggedIn ?
             <NavLink to="/browse" className="nav-item nav-sign-out" onClick={() => loggedIn=false} >
                 <FA name="sign-out" className="nav-item__icon" />
-                Sign Out
+                <span className="nav-item__description" >Sign Out</span> 
             </NavLink>
             :
             <NavLink to="/sign-in" className="nav-item nav-sign-out" activeClassName="nav-item--is-active" onClick={() => loggedIn=true} >
                 <FA name="sign-in" className="nav-item__icon" />
-                Sign In
+                <span className="nav-item__description" >Sign In</span> 
             </NavLink>
         }
     </div>
