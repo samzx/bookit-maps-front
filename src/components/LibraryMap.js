@@ -17,7 +17,6 @@ class LibraryMap extends React.Component{
             y:0
         },
         clicked: false,
-        touched: false,
         zoom: 1,
         imageDimensions: {}
     };
@@ -41,13 +40,24 @@ class LibraryMap extends React.Component{
             }));
     }
 
-    handleClick = (e) => {
+    handleClick = (e, mode) => {
         e.persist();
+        let interactX, interactY;
+        switch(mode){
+            case "desktop":
+                interactX = e.clientX;
+                interactY = e.clientY;
+                break;
+            case "mobile":
+                interactX = e.changedTouches[0].clientX
+                interactY = e.changedTouches[0].clientY
+                break;
+        }
         this.setState(() => ({
                 clicked: true,
                 mouse:{
-                    x: e.clientX,
-                    y: e.clientY
+                    x: interactX,
+                    y: interactY
                 } 
             }));
     }
@@ -56,20 +66,23 @@ class LibraryMap extends React.Component{
         this.setState(() => ({clicked: false}));
     }
     
-    handleMove = (e) => {
+    handleMove = (e, mode) => {
         e.persist();
         // TODO: add inertia
         // TODO: add lock (so image can't be dragged completely out)
         // FEATURE: rotate depending on entrance (pick entrance, and will rotate map bottom as enrance) and show location
-        console.log(this.state.mouse.x + ', ' + this.state.mouse.y)
-        if(this.state.clicked || this.state.touched){
+        if(this.state.clicked){
+
             let interactX, interactY;
-            if(this.state.clicked){
-                interactX = e.clientX;
-                interactY = e.clientY;
-            } else if (this.state.touched){
-                interactX = e.originalEvent.touches[0].pageX;
-                interactY = e.originalEvent.touches[0].pageY;
+            switch(mode){
+                case "desktop":
+                    interactX = e.clientX;
+                    interactY = e.clientY;
+                    break;
+                case "mobile":
+                    interactX = e.changedTouches[0].clientX;
+                    interactY = e.changedTouches[0].clientY;
+                    break;
             }
             this.setState((prevState)=> ({
                 // Move map according to delta in mouse position
@@ -120,11 +133,11 @@ class LibraryMap extends React.Component{
             <div 
                 className="library-map-container"
 
-                onMouseDown={(e) => this.handleClick(e)}
-                onTouchStart={(e) => this.handleClick(e)}
+                onMouseDown={(e) => this.handleClick(e, "desktop")}
+                onTouchStart={(e) => this.handleClick(e, "mobile")}
 
-                onMouseMove={(e) => this.handleMove(e)}
-                onTouchMove={(e) => this.handleMove(e)}
+                onMouseMove={(e) => this.handleMove(e, "desktop")}
+                onTouchMove={(e) => this.handleMove(e, "mobile")}
 
                 onMouseUp = {this.handleUnclick}
                 onMouseLeave = {this.handleUnclick}
