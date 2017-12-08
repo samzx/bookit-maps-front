@@ -13,7 +13,7 @@ const fetchResources = (store) => {
         store.dispatch(updateResources(data));
     })
     .catch((e) => {
-        console.log(`Fetch request failed. Attempted to retrieve data from ${url} but did not.`);
+        console.warn(`Fetch request failed. Attempted to retrieve data from ${url} but did not.`);
     });
 }
 

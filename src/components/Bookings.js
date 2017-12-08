@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { setTextFilter, setLibraryFilter, setFloorFilter } from '../actions/filters';
 
 const Bookings = (props) => (
     <div className="bookings">
@@ -7,8 +8,12 @@ const Bookings = (props) => (
         {
            props.bookings.map((booking, index) => {
                return (
-                   <div key={booking + ':booking:#' + index}>
-                        <a><p className="bookings-listing"> {booking} </p></a>
+                   <div key={'bid::' + booking.booking_id} onClick={() => {
+                       props.dispatch(setTextFilter(booking.resource));
+                       props.dispatch(setLibraryFilter(booking.site));
+                       props.dispatch(setFloorFilter(booking.resource.split('-')[1]));
+                    }}>
+                        <a><p className="bookings-listing"> {booking.resource} </p></a>
                     </div>
                );
            })

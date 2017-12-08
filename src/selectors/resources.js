@@ -15,12 +15,14 @@ const selectResources = (resources = [], {text, library, floor}) => {
             objects = objects.concat(results[i].resources);
         }
 
+        // Filter by level len >= 3 .split('-')[1] == G
+        
+
         // Filter by text if library exists
         if(!!library){
             const textFiltered = objects.filter((resource) => {
                 const textMatch = resource.name
-                .toLowerCase()
-                .replace(/\W/g, '')
+                .toLowerCase().replace(/\W/g, '')
                 .includes(
                     text.toLowerCase().replace(/\W/g, '')
                 );

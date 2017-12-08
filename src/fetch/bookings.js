@@ -21,10 +21,11 @@ const fetchBookings = (store) => {
     })
     .then((data) => {
         console.log(data);
+        // UNCOMMENT BELOW ONCE FETCH SUCCEEDS
         // store.dispatch(updateBookings(data));
     })
     .catch((e) => {
-        console.log("Fetch request failed.");
+        console.warn(`Fetch request failed. Could not retreive USER BOOKINGS from ${url}`);
     });
 }
 

@@ -1,5 +1,4 @@
 .library-map-container {
-    box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.1);
     position: absolute;
     left: $sidebar-width; top: $header-height; right: 0; bottom: 0;
     height: calc(100% - #{$header-height});

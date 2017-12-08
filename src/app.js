@@ -23,9 +23,30 @@ const store = configureStore();
     store.dispatch(setTextFilter(""));
 
     store.dispatch(updateBookings([
-        "GN-1",
-        "GN-2",
-        "Other"
+        { 
+            "booked_by": "zxie3", 
+            "booking_date": "08/12/2017",
+            "start_time": "23:30",
+            "site": "Baillieu",
+            "booked_for": "zxie3", 
+            "booking_type": "User",
+            "booking_id": "3962363", 
+            "end_time": "23:59", 
+            "booking_method": "Advance", 
+            "duration": "00:29:00", 
+            "resource": "Baillieu-G-01", 
+            "location": "G North: 3-hr PC" 
+        },
+        { 
+            "site": "ERC",
+            "resource": "ERC-3-01", 
+            "booking_id": "1", 
+        },
+        { 
+            "site": "Giblin Eunson",
+            "resource": "GE-1-03", 
+            "booking_id": "2", 
+        }
     ]));
 // TEMP
 

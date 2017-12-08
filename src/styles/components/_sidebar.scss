@@ -1,9 +1,11 @@
 .sidebar{
     background: $off-white;
-    position: absolute;
-    left:0;right:0;
-    width: $sidebar-width;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.05);
     height: calc(100% - #{$header-height});
+    left:0;right:0;
+    overflow: scroll;
+    position: absolute;
+    width: $sidebar-width;
     z-index: 1;
 }
 
@@ -16,6 +18,11 @@
     color: $light-blue;
 }
 
+@media (min-width: 480px){
+    .sidebar::-webkit-scrollbar { 
+        display: none; 
+    }
+}
 
 @media (max-width: 480px){
     .sidebar {

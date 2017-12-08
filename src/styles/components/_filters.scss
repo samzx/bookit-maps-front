@@ -2,13 +2,30 @@
     display: block;
 }
 
-.browse-filters__select{
+.browse-filters__item--select{
+    // background: darken($off-white, 10);
+    // border: 0.0rem solid $light-blue;
+    border-radius: 0.2rem;
+    // color: black;
     display: flex;
+    font-weight: 300;
     width: 14rem;
-    margin-left: $m-size;
 }
 
-.browse-filters__field{
-    width: 14rem;
+.browse-filters__item--field{
+    // background: darken($off-white, 10);
+    border-radius: 0.2rem;
+    border: 0.0rem solid $light-blue;
+    box-shadow: inset 0px 0px 0.5rem rgba(0,0,0,0.25);
+    color: black;
+    font-weight: 300;
+    padding: 0.2rem;
+    padding-left: 1rem;
+    width: 12.6rem;
+}
+
+.browse-filters__item{
     margin-left: $m-size;
+    margin-bottom: $m-size;
+    height: $l-size;
 }
