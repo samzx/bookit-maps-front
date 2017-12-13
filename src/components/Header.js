@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logUserOut } from '../actions/user'
+import { clearBookings } from '../actions/bookings'; //
 import logo from '../images/favicon.png';
 import FA from 'react-fontawesome';
 
@@ -30,7 +31,15 @@ const Header = (props) => (
         {
             /* Allows users to sign out. Possibly settings (profile) in future */
             !!props.user.username ?
-            <NavLink to="/" className="nav-item nav-sign-out" onClick={() => props.dispatch(logUserOut())} >
+            <NavLink to="/" className="nav-item nav-sign-out"
+                onClick={
+                    () => {
+                        props.dispatch(logUserOut())
+                        // HACK: Clear bookings should be handeled by log out.
+                        props.dispatch(clearBookings())
+                    }
+                } 
+            >
                 <FA name="sign-out" className="nav-item__icon" />
                 <span className="nav-item__description" >Sign Out</span> 
             </NavLink>

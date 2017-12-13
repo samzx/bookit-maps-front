@@ -29,8 +29,6 @@ yarn install
 
 ## Development build
 
-As the front-end communicates with a third party website, you'll need to install this CORS plugin for it to serve locally and retrieve data.
-[Download here](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?hl=en).
 To serve up local server, run in terminal:
 ```
 yarn run dev-server

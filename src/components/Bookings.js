@@ -6,7 +6,10 @@ const Bookings = (props) => (
     <div className="bookings">
         <p className="sidebar-title">Your Bookings</p>
         {
-           props.bookings.map((booking, index) => {
+            props.bookings.length == 0 ?
+            undefined // <p> No bookings </p>
+            :
+            props.bookings.map((booking, index) => {
                return (
                    <div key={'bid::' + booking.booking_id} onClick={() => {
                        props.dispatch(setTextFilter(booking.resource));
