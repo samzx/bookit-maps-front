@@ -3,7 +3,7 @@ import MapOverlay from '../components/MapOverlay';
 import MapBackground from '../components/MapBackground';
 
 // Put into state?
-const sidebarWidth = 178;
+const sidebarWidth = 210;
 const headerHeight = 59;
 
 class LibraryMap extends React.Component{

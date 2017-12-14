@@ -15,8 +15,17 @@ const selectResources = (resources = [], {text, library, floor}) => {
             objects = objects.concat(results[i].resources);
         }
 
+        // FILTER BY FLOOR
         // Filter by level len >= 3 .split('-')[1] == G
-        
+        objects = objects.filter((item) => {
+            // console.log(item);
+            const arr = item.name.split('-');
+            if(arr.length == 3){
+                return arr[1] == floor;
+            } else {
+                return false;
+            }
+        })
 
         // Filter by text if library exists
         if(!!library){

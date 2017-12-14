@@ -1,6 +1,7 @@
 # BookIT Maps
 
 BookIT Maps guides users of the library booking system from bookit.unimelb.au to find the location of their bookings through an interactive map.
+Connects with the backend [api](https://github.com/cmbrad/studentit-mapit-api) to retrieve data.
 
 ## Prerequisites
 

@@ -4,3 +4,39 @@
     transform-origin: right bottom;
     // opacity: 0.5;
 }
+
+$pulse-speed: 3s;
+$pulse-scale: 2;
+$stroke-width: 0.06rem;
+// SQRT approximation
+$scale-stroke-width: $stroke-width/((($pulse-scale - 1) /2) + 1);
+
+.pulse-circle-1, .pulse-circle-2{
+    animation: pulse $pulse-speed cubic-bezier(.39,.54,.41,1.5) infinite;
+    transform-origin: center;
+}
+
+.pulse-circle-2{
+    animation-delay: 1.5s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1,1);
+        stroke-width: $stroke-width;
+    }
+    50% {
+        transform: scale($pulse-scale, $pulse-scale);
+        stroke-width: $scale-stroke-width;
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale($pulse-scale, $pulse-scale);
+        stroke-width: $scale-stroke-width;
+        opacity: 0;
+    }
+}

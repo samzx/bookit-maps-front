@@ -4,8 +4,10 @@
     margin: 0;
     background: $off-white;
     transition: background-color 0.5s;
+    text-decoration: none;
 }
 
 .bookings-listing:hover{
     background: darken($off-white, 3%);
+    cursor: pointer;
 }

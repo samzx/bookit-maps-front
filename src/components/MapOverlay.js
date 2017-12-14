@@ -6,6 +6,10 @@ import selectResources from '../selectors/resources';
 
 class MapOverlay extends React.Component{
 
+    state = {
+        displaySingle: false
+    }
+
     createMarker = ({name, id, state}) => {
         try {
             return (
@@ -15,6 +19,12 @@ class MapOverlay extends React.Component{
                     y={locations[id]["y"]}
                     size={4}
                     color={this.pickColor(state)}
+
+                    id={id}
+                    name={name}
+                    state={state}
+
+                    shine={this.state.displaySingle}
                 />
             );
         } catch (e) {
@@ -27,12 +37,28 @@ class MapOverlay extends React.Component{
             case "AVAILABLE":
                 return "green";
             case "IN_USE":
-                return "red";
+                return "orange";
             case "YOUR_BOOKING":
                 return "yellow"
             default:
-                return "orange";
+                return "red";
         }
+    }
+
+    checkIsDisplayingSingle = () => {
+        if(this.props.resources.length == 1 && this.state.displaySingle == false){
+            this.setState(() => ({displaySingle: true}));
+        } else if (this.props.resources.length != 1 && this.state.displaySingle == true){
+            this.setState(() => ({displaySingle: false}));
+        }
+    }
+
+    componentDidMount(){
+        this.checkIsDisplayingSingle();
+    }
+
+    componentDidUpdate(){
+        this.checkIsDisplayingSingle();
     }
 
     render(){

@@ -8,7 +8,7 @@ import FA from 'react-fontawesome';
 
 const Header = (props) => (
     <div className="header" >
-        <div className="">
+        <div className="header-title-container">
             <h1 className="header-title"> BookIT Maps</h1>
         </div>
         <div className="nav-listing">
