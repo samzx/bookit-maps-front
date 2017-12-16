@@ -5,6 +5,14 @@
     // opacity: 0.5;
 }
 
+.marker-label{
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 5;
+    color: white;
+}
+
+// Animations below
 $pulse-speed: 3s;
 $pulse-scale: 2;
 $stroke-width: 0.05rem;

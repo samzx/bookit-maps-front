@@ -7,7 +7,7 @@ const Book = (props) => (
     <div>
         {
             !!props.user.username ?
-            <p>Book has nothing here at the moment. <Link to="/"> Looking to browse? </Link></p>
+            <p style={{textAlign:"center"}}>Book has nothing here at the moment. <Link to="/"> Looking to browse? </Link></p>
             :
             <NotFound />
         }
