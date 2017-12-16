@@ -5,10 +5,6 @@ import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { setLibraryFilter, setFloorFilter, setTextFilter } from './actions/filters';
-import { updateResources } from './actions/resources';
-import { updateBookings } from './actions/bookings';
-import { logUserIn } from './actions/user';
-import selectResources from './selectors/resources';
 
 import fetchResources from './fetch/resources';
 import fetchBookings from './fetch/bookings';
@@ -18,10 +14,10 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-// TEMP
-    store.dispatch(setLibraryFilter("Baillieu"));
-    store.dispatch(setFloorFilter("Ground"));
-    store.dispatch(setTextFilter(""));
+// Default values
+store.dispatch(setLibraryFilter("Baillieu"));
+store.dispatch(setFloorFilter("Ground"));
+store.dispatch(setTextFilter(""));
 
 let jsx = (
     <Provider store={store}>
@@ -31,11 +27,11 @@ let jsx = (
 
 ReactDOM.render(jsx, document.getElementById("app"));
 
-// Repeat call every minute - Called by map
+// Refresh resources per minute
     fetchResources(store);
     setInterval(() => fetchResources(store), 60000);
 
-// Fetch bookings when user logs in.
+// Fetch bookings when user logs in. Refresh per minute.
     export const fetchBookingsToStore = () => fetchBookings(store);
     setInterval(() => {
         if(store.getState().user.username){

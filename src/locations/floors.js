@@ -13,10 +13,10 @@ import baillieu1 from '../images/3.svg';
 
 export default {
     "_default": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "Architecture" : [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "Baillieu": [
         {name: "Ground", filter: ["G", "GN"], map: baillieuG}, 
@@ -24,30 +24,30 @@ export default {
         {name: "Level 1", filter: ["1"], map: baillieu1}
     ], 
     "Brownless": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "Burnley": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "ERC": [
-        {name: "Level 1", filter: ["1", "101"]}, 
-        {name: "Level 2", filter: ["2"]}, 
-        {name: "Level 3", filter: ["3"]},
-        {name: "Level 4", filter: ["4"]},
-        {name: "Level 5", filter: ["5"]}
+        {name: "Level 1", filter: ["1", "101"], map: undefined}, 
+        {name: "Level 2", filter: ["2"], map: undefined}, 
+        {name: "Level 3", filter: ["3"], map: undefined},
+        {name: "Level 4", filter: ["4"], map: undefined},
+        {name: "Level 5", filter: ["5"], map: undefined}
     ],
     "Giblin Eunson": [
-        {name: "Ground", filter: ["G"]}, 
-        {name: "Upper Ground", filter: ["UG"]}, 
-        {name: "Level 1", filter: ["1"]}
+        {name: "Ground", filter: ["G"], map: undefined}, 
+        {name: "Upper Ground", filter: ["UG"], map: undefined}, 
+        {name: "Level 1", filter: ["1"], map: undefined}
     ],
     "Law": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "Lenton Parr": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
     "Werribee - Vet Sci": [
-        {name: "", filter: []},
+        {name: "", filter: [], map: undefined},
     ],
 }

@@ -1,40 +1,24 @@
 import React from 'react'
-import { connect } from "react-redux";
-import floors from '../locations/floors';
+import { connect } from 'react-redux';
+import selectMap from '../selectors/map';
 
 import baillieuG from '../images/1.svg';
 const maps = baillieuG;
 
-class MapBackground extends React.Component{
-
-    state = {
-        display: this.getDisplay()
-    }
-
-    getDisplay(){
-        // Should listen to change in filters
-        return floors[this.props.filters.library].filter((item) => {
-            return item.name == this.props.filters.floor;
-        })[0].map;
-    }
-
-    render(){
-        return (
-            <div>
-                <img 
-                    src={this.state.display}
-                    draggable="false"
-                    className="library-map-img"
-                    onLoad={this.props.onImgLoad}
-                />
-            </div>
-        );
-    }
-}
+const MapBackground = (props) => (
+    <div>
+        <img 
+            src={props.map}
+            draggable="false"
+            className="library-map-img"
+            onLoad={props.onImgLoad}
+        />
+    </div>
+);
 
 const mapStateToProps = (state) => {
     return {
-        filters: state.filters
+        map: selectMap(state.filters)
     }
 }
 
