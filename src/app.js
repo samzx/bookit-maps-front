@@ -20,7 +20,7 @@ const store = configureStore();
 
 // TEMP
     store.dispatch(setLibraryFilter("Baillieu"));
-    store.dispatch(setFloorFilter("G"));
+    store.dispatch(setFloorFilter("Ground"));
     store.dispatch(setTextFilter(""));
 
 let jsx = (
@@ -37,4 +37,8 @@ ReactDOM.render(jsx, document.getElementById("app"));
 
 // Fetch bookings when user logs in.
     export const fetchBookingsToStore = () => fetchBookings(store);
-    setInterval(() => fetchBookingsToStore() , 60000);
+    setInterval(() => {
+        if(store.getState().user.username){
+            fetchBookingsToStore()
+        }
+    } , 60000);

@@ -11,3 +11,16 @@
     background: darken($off-white, 3%);
     cursor: pointer;
 }
+
+.bookings-listing-refresh{
+    position: absolute;
+    right: 2rem;
+}
+
+.bookings-listing-refresh--active{
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}

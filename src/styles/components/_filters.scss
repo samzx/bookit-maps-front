@@ -25,3 +25,20 @@
     margin-bottom: $m-size;
     height: $l-size;
 }
+
+.browse-filters__item--button{
+    width: $sidebar-width*0.85;
+    background-color: darken($off-white, 10);
+    border-radius: 0.2rem;
+    border: 0rem;
+    color: $pale-blue;
+}
+
+.browse-filters-clear-text{
+    position: absolute;
+    right: 2.5rem;
+    margin-top: 1rem;
+    color: grey;
+    background: transparent;
+    border: 0rem;
+}

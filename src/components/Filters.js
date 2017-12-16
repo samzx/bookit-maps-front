@@ -17,11 +17,24 @@ const Filters = (props) => (
                 props.dispatch(setTextFilter(e.target.value))
             }}
         />
+        {
+            props.filters.text && 
+            <a
+                className="browse-filters-clear-text"
+                onClick={
+                    () => {
+                        props.dispatch(setTextFilter());
+                    }
+                }
+            > <FA name="times-circle" /> </a>
+        }
         
         <select className="browse-filters__item browse-filters__item--select"
             value={props.filters.library}
             onChange={(e) => {
-                props.dispatch(setLibraryFilter(e.target.value));
+                const lib = e.target.value;
+                props.dispatch(setLibraryFilter(lib));
+                props.dispatch(setFloorFilter(floors[lib][0].name));
             }}
         >
             {
@@ -42,7 +55,7 @@ const Filters = (props) => (
             {
                 floors[props.filters.library].map((floor) => {
                     return (
-                        <option value={floor.filter} key={'floor::id::' + floor.filter}> {floor.name} </option>
+                        <option value={floor.name} key={'floor::id::' + floor.filter}> {floor.name} </option>
                     );
                 })
             }

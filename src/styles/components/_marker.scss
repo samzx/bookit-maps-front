@@ -7,7 +7,7 @@
 
 $pulse-speed: 3s;
 $pulse-scale: 2;
-$stroke-width: 0.06rem;
+$stroke-width: 0.05rem;
 // SQRT approximation
 $scale-stroke-width: $stroke-width/((($pulse-scale - 1) /2) + 1);
 
@@ -17,7 +17,8 @@ $scale-stroke-width: $stroke-width/((($pulse-scale - 1) /2) + 1);
 }
 
 .pulse-circle-2{
-    animation-delay: 1.5s;
+    animation-delay: $pulse-speed/2;
+    stroke-width: 0;
 }
 
 @keyframes pulse {

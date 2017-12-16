@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Marker from '../components/Marker';
+import { BasicMarker } from '../components/Marker';
 
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
@@ -63,7 +63,7 @@ class LocationFinder extends React.Component {
             >
                 {
                     this.state.positions.map((pos, index)=> 
-                        <Marker
+                        <BasicMarker
                             key={"itemnum" + index}
                             x={pos.x}
                             y={pos.y}

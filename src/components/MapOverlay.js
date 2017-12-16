@@ -35,13 +35,13 @@ class MapOverlay extends React.Component{
     pickColor = (status) => {
         switch (status){
             case "AVAILABLE":
-                return "green";
+                return "forestgreen";
             case "IN_USE":
-                return "orange";
+                return "darkorange";
             case "YOUR_BOOKING":
-                return "yellow"
+                return "slateblue"
             default:
-                return "red";
+                return "crimson";
         }
     }
 

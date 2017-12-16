@@ -10,7 +10,8 @@
     "dev-server": "webpack-dev-server",
     "test": "jest",
     "count": "cloc $(git ls-files)",
-    "location-finder": "webpack-dev-server --entry ./src/tools/location-finder.js"
+    "location-finder": "webpack-dev-server --entry ./src/tools/location-finder.js",
+    "graph-generator": "webpack-dev-server --entry ./src/tools/graph-generator.js"
   },
   "dependencies": {
     "babel-cli": "6.24.1",

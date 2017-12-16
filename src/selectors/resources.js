@@ -1,3 +1,4 @@
+import floors from '../locations/floors';
 // Calling this function selects relevant resources that are filtered accordingly
 
 const selectResources = (resources = [], {text, library, floor}) => {
@@ -21,7 +22,11 @@ const selectResources = (resources = [], {text, library, floor}) => {
             // console.log(item);
             const arr = item.name.split('-');
             if(arr.length == 3){
-                return arr[1] == floor;
+                // console.log(level.name, floor);
+                const codes = floors[library].filter((level) => {
+                    return level.name == floor;
+                })[0].filter;
+                return codes.includes(arr[1]);
             } else {
                 return false;
             }
