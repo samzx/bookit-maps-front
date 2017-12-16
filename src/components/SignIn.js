@@ -68,12 +68,13 @@ class SignIn extends React.Component{
     render(){
         return (
             <div>
-                <form onSubmit={this.onSubmit} >
+                <form onSubmit={this.onSubmit} className="sign-in-form" >
                     <input 
                         type="text" 
                         placeholder={"Username"}
                         value={this.state.username}
                         onChange={this.onUsernameChange}
+                        className="sign-in-input"
                     />
                     <input 
                         type="password" 
@@ -81,14 +82,19 @@ class SignIn extends React.Component{
                         value={this.state.password}
                         onChange={this.onPasswordChange}
                         ref="userPassword"
+                        className="sign-in-input"
                     />
-                    <button> Sign In </button>
+                    <button
+                        className="sign-in-input"
+                    > 
+                        Sign In 
+                    </button>
                 </form>
                 {
-                    this.props.user.hanging ? <p> Attempting Log in... </p> : undefined
+                    this.props.user.hanging ? <p className="sign-in-text" > Attempting Log in... </p> : undefined
                 }
                 {
-                    !!this.state.error && !this.props.user.hanging && <p>{this.state.error}</p>
+                    !!this.state.error && !this.props.user.hanging && <p className="sign-in-text" >{this.state.error}</p>
                 }
             </div>
         );
