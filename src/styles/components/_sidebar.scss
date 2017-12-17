@@ -22,6 +22,10 @@
     .sidebar::-webkit-scrollbar { 
         display: none; 
     }
+    .sidebar{
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+    }
 }
 
 @media (max-width: 480px){

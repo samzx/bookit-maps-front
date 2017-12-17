@@ -19,21 +19,15 @@
 .library-map{
     position: absolute;
     transform-origin: top left;
-    
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-
     z-index: -1;
 }
 
 .library-map-img{
     user-select: none;
     -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
     -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
     z-index: -1;
 }
