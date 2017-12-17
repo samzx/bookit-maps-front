@@ -22,7 +22,6 @@ const selectResources = (resources = [], {text, library, floor}) => {
             // console.log(item);
             const arr = item.name.split('-');
             if(arr.length == 3){
-                // console.log(level.name, floor);
                 const codes = floors[library].filter((level) => {
                     return level.name == floor;
                 })[0].filter;

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { setTextFilter, setLibraryFilter, setFloorFilter } from '../actions/filters';
 import { fetchBookingsToStore } from '../app';
 import FA from 'react-fontawesome';
+import floors from '../locations/floors';
 
 class Bookings extends React.Component{
 
@@ -42,9 +43,17 @@ class Bookings extends React.Component{
                     this.props.bookings.map((booking, index) => {
                        return (
                            <div key={'bid::' + booking.booking_id} onClick={() => {
-                               this.props.dispatch(setTextFilter(booking.resource));
-                               this.props.dispatch(setLibraryFilter(booking.site));
-                               this.props.dispatch(setFloorFilter(booking.resource.split('-')[1]));
+                                this.props.dispatch(setLibraryFilter(booking.site));
+                                
+                                const resources = booking.resource.split('-');
+                                const lib = resources[0];
+                                const floorFilter = resources[1];
+                                const floorName = floors[resources[0]].filter((floor) => {
+                                    return floor.filter.includes(floorFilter);
+                                })[0].name;
+                                this.props.dispatch(setFloorFilter(floorName));
+
+                                this.props.dispatch(setTextFilter(booking.resource));
                             }}>
                                 <a><p className="bookings-listing"> {booking.resource} </p></a>
                             </div>
