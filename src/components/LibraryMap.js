@@ -17,6 +17,7 @@ class LibraryMap extends React.Component{
             y:0
         },
         clicked: false,
+        grabStyle: "library-map-container",
         zoom: 1,
         imageDimensions: {}
     };
@@ -55,6 +56,7 @@ class LibraryMap extends React.Component{
         }
         this.setState(() => ({
                 clicked: true,
+                grabStyle: "library-map-container library-map-container--grabbing",
                 mouse:{
                     x: interactX,
                     y: interactY
@@ -63,7 +65,10 @@ class LibraryMap extends React.Component{
     }
     
     handleUnclick = () => {
-        this.setState(() => ({clicked: false}));
+        this.setState(() => ({
+            clicked: false,
+            grabStyle: "library-map-container",
+        }));
     }
     
     handleMove = (e, mode) => {
@@ -131,7 +136,9 @@ class LibraryMap extends React.Component{
     render(){
         return (
             <div 
-                className="library-map-container"
+                className={this.state.grabStyle}
+
+                onClick={(e) => e.preventDefault()}
 
                 onMouseDown={(e) => this.handleClick(e, "desktop")}
                 onTouchStart={(e) => this.handleClick(e, "mobile")}

@@ -5,7 +5,7 @@ import { setTextFilter } from '../actions/filters';
 
 export const BasicMarker = (props) => (
     <svg 
-        className="marker-svg" 
+        className="marker-svg base-marker" 
         height={props.size} 
         width={props.size} 
         style={{
@@ -103,7 +103,7 @@ class Marker extends React.Component {
                     onTouchStart={this.startHover}
                     onTouchEnd={this.endHover}
                 >
-                    <BasicMarker 
+                    <BasicMarker
                         size={this.props.size}
                         x={this.props.x}
                         y={this.props.y}

@@ -18,18 +18,35 @@
     color: $light-blue;
 }
 
+.sidebar-mobile-activate{
+    position: absolute;
+    margin: $m-size/2;
+    margin-left: $m-size;
+    z-index: 2;
+    font-size: $m-size;
+    color: $true-blue;
+}
+
 @media (min-width: 480px){
     .sidebar::-webkit-scrollbar { 
         display: none; 
     }
+
     .sidebar{
         -ms-overflow-style: none;
         overflow: -moz-scrollbars-none;
     }
+
+    .sidebar-mobile-activate{
+        display: none;
+    }
 }
 
 @media (max-width: 480px){
-    .sidebar {
+    .sidebar--close {
         display: none;
+    }
+    .sidebar--open{
+        display: relative;
     }
 }

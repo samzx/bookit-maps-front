@@ -69,7 +69,8 @@ class SignIn extends React.Component{
         return (
             <div>
                 <form onSubmit={this.onSubmit} className="sign-in-form" >
-                    <input 
+                    <input
+                        autoFocus 
                         type="text" 
                         placeholder={"Username"}
                         value={this.state.username}
