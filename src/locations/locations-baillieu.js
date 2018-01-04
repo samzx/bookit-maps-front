@@ -1,4 +1,10 @@
-// Baillieu
+/**
+ * Baillieu Locations
+ * ------------------
+ * Store locations of a resource in this file.
+ * ID's corresponding to computers are found at: https://sit-maps-api-dev.cy.id.au/resources/
+ * Follow the existing commenting pattern. So that eg. 143 is G1 and 236 is G2
+ */
 const locations = {
     // G: 1-8
     143: {x: 525, y: 492},

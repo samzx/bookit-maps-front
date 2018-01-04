@@ -6,6 +6,7 @@ import Book from '../components/Book';
 import SignIn from '../components/SignIn';
 import NotFoundPage from '../components/NotFoundPage';
 
+// Client side routing component using React Router. No landing page as of now.
 const AppRouter = () => (
     <BrowserRouter>
         <div>

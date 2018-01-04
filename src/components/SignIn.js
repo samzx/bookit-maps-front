@@ -92,9 +92,11 @@ class SignIn extends React.Component{
                     </button>
                 </form>
                 {
+                    // Signal to user that it is attempting a log in. Can use loading icon for this later.
                     this.props.user.hanging ? <p className="sign-in-text" > Attempting Log in... </p> : undefined
                 }
                 {
+                    // Display error if valid
                     !!this.state.error && !this.props.user.hanging && <p className="sign-in-text" >{this.state.error}</p>
                 }
             </div>

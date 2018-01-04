@@ -18,6 +18,7 @@ const Filters = (props) => (
             }}
         />
         {
+            // Clear text icon in Search bar (X)
             props.filters.text && 
             <a
                 className="browse-filters-clear-text"
@@ -28,7 +29,7 @@ const Filters = (props) => (
                 }
             > <FA name="times-circle" /> </a>
         }
-        
+        {/* Select Library */}
         <select className="browse-filters__item browse-filters__item--select"
             value={props.filters.library}
             onChange={(e) => {
@@ -46,6 +47,7 @@ const Filters = (props) => (
             }
         </select>
 
+        {/* Select Floor */}
         <select className="browse-filters__item browse-filters__item--select"
             value={props.filters.floor}
             onChange={(e) => {

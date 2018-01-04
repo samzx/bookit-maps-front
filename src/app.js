@@ -12,6 +12,7 @@ import fetchBookings from './fetch/bookings';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
+// Create new instance of Redux store
 const store = configureStore();
 
 // Default values
@@ -19,6 +20,7 @@ store.dispatch(setLibraryFilter("Baillieu"));
 store.dispatch(setFloorFilter("Ground"));
 store.dispatch(setTextFilter(""));
 
+// Rendering Components contains Provider which allows child components to connect to store
 let jsx = (
     <Provider store={store}>
         <AppRouter />
@@ -28,13 +30,13 @@ let jsx = (
 ReactDOM.render(jsx, document.getElementById("app"));
 
 // Refresh resources per minute
-    fetchResources(store);
-    setInterval(() => fetchResources(store), 60000);
+fetchResources(store);
+setInterval(() => fetchResources(store), 60000);
 
 // Fetch bookings when user logs in. Refresh per minute.
-    export const fetchBookingsToStore = () => fetchBookings(store);
-    setInterval(() => {
-        if(store.getState().user.username){
-            fetchBookingsToStore()
-        }
-    } , 60000);
+export const fetchBookingsToStore = () => fetchBookings(store);
+setInterval(() => {
+    if(store.getState().user.username){
+        fetchBookingsToStore()
+    }
+} , 60000);

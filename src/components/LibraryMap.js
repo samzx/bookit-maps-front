@@ -2,7 +2,7 @@ import React from 'react';
 import MapOverlay from '../components/MapOverlay';
 import MapBackground from '../components/MapBackground';
 
-// Put into state?
+// HACK: Hardcoded...
 const sidebarWidth = 210;
 const headerHeight = 59;
 
@@ -23,7 +23,7 @@ class LibraryMap extends React.Component{
     };
 
     componentDidMount(){
-        // Loaded from cache, centers map
+        // If loaded from cache, re-centers map
         this.setState(()=> ({
             map : {
                 x:window.innerWidth/2 - document.getElementsByClassName("library-map-img")[0].clientWidth*this.state.zoom/2 -sidebarWidth/2,
@@ -33,6 +33,7 @@ class LibraryMap extends React.Component{
     }
 
     onImgLoad = ({target:img}) => {
+        // Centers map
         this.setState(() => ({
                 map:{
                     x: window.innerWidth/2 - img.clientWidth*this.state.zoom/2 -sidebarWidth/2,
@@ -74,7 +75,7 @@ class LibraryMap extends React.Component{
     handleMove = (e, mode) => {
         e.persist();
         // TODO: add inertia
-        // TODO: add lock (so image can't be dragged completely out)
+        // TODO: add lock (so image can't be dragged completely out of screen)
         // FEATURE: rotate depending on entrance (pick entrance, and will rotate map bottom as enrance) and show location
         if(this.state.clicked){
 
@@ -110,11 +111,11 @@ class LibraryMap extends React.Component{
         if(true){
             this.setState((prevState)=> { 
                 let scalechange =  -e.deltaY/1000;
-                
+                // HACK: Hard coded to 1.8 to prevent lagging (if value is > 1.8)
                 if(prevState.zoom + scalechange > 1.8 && scalechange > 0){
                     return;
                 }
-
+                // HACK: Hardcoded to set max zoom out to 1. Should experiment with different values
                 if(prevState.zoom + scalechange < 1 && scalechange < 0){
                     return;
                 }

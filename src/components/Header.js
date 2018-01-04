@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logUserOut } from '../actions/user'
-import { clearBookings } from '../actions/bookings'; //
+import { clearBookings } from '../actions/bookings';
 import logo from '../images/favicon.png';
 import FA from 'react-fontawesome';
 

@@ -10,8 +10,8 @@
 }
 
 .browse-filters__item--field{
-    border-radius: 0.2rem;
     border: 0.0rem solid $light-blue;
+    border-radius: 0.2rem;
     box-shadow: inset 0px 0px 0.5rem rgba(0,0,0,0.25);
     color: black;
     font-weight: 300;
@@ -21,24 +21,24 @@
 }
 
 .browse-filters__item{
+    height: $l-size;
     margin-left: $m-size;
     margin-bottom: $m-size;
-    height: $l-size;
 }
 
 .browse-filters__item--button{
-    width: $sidebar-width*0.85;
     background-color: darken($off-white, 10);
-    border-radius: 0.2rem;
     border: 0rem;
+    border-radius: 0.2rem;
     color: $pale-blue;
+    width: $sidebar-width*0.85;
 }
 
 .browse-filters-clear-text{
-    position: absolute;
-    right: 2.5rem;
-    margin-top: 1rem;
-    color: silver;
     background: transparent;
     border: 0rem;
+    color: silver;
+    margin-top: 1rem;
+    position: absolute;
+    right: 2.5rem;
 }

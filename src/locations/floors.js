@@ -2,6 +2,7 @@
 import baillieuG from '../images/1.svg';
 import baillieuLG from '../images/2.svg';
 import baillieu1 from '../images/3.svg';
+// TODO: Below files do not exist yet
 // import erc1 from '../images/4.svg';
 // import erc2 from '../images/5.svg';
 // import erc3 from '../images/6.svg';
@@ -11,6 +12,11 @@ import baillieu1 from '../images/3.svg';
 // import beeUG from '../images/10.svg';
 // import bee1 from '../images/11.svg';
 
+/**
+ * This object contains information about a specific floor:
+ * - The filters accepted eg. Baillieu Ground accepts G and GN
+ * - The map file associated
+ */
 export default {
     "_default": [
         {name: "", filter: [], map: undefined},

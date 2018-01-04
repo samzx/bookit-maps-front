@@ -9,7 +9,7 @@ export default (user = userReducerDefaultState, action) => {
                 baseAuth: action.baseAuth
             };
         case 'LOG_OUT':
-            // REMINDER: CLEAR BOOKINGS AND OTHER RELATED DATA
+            // TODO: CLEAR BOOKINGS AND OTHER RELATED DATA
             return userReducerDefaultState;
         case 'LOGGING_IN_PROGRESS':
             return {

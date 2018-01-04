@@ -1,10 +1,10 @@
 .bookings-listing {
-    color: $dark-blue;
-    padding: $m-size;
-    margin: 0;
     background: $off-white;
-    transition: background-color 0.5s;
+    color: $dark-blue;
+    margin: 0;
+    padding: $m-size;
     text-decoration: none;
+    transition: background-color 0.5s;
 }
 
 .bookings-listing:hover{

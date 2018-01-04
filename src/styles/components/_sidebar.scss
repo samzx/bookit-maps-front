@@ -10,21 +10,21 @@
 }
 
 .sidebar-title {
-    text-transform: uppercase;
+    color: $light-blue;
     font-weight: 500;
     margin: 0;
     margin-top: $s-size;
     padding: $m-size;
-    color: $light-blue;
+    text-transform: uppercase;
 }
 
 .sidebar-mobile-activate{
-    position: absolute;
+    color: $true-blue;
+    font-size: $m-size;
     margin: $m-size/2;
     margin-left: $m-size;
+    position: absolute;
     z-index: 2;
-    font-size: $m-size;
-    color: $true-blue;
 }
 
 @media (min-width: 480px){

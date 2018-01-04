@@ -1,17 +1,12 @@
 .library-map-container {
-    position: absolute;
     left: $sidebar-width; top: $header-height; right: 0; bottom: 0;
     height: calc(100% - #{$header-height});
-    width: calc(100% - #{$sidebar-width});
-    cursor: move; /* fallback if grab cursor is unsupported */
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
     overflow: hidden;
-    zoom: 1;
+    position: absolute;
+    touch-action: none;
+    width: calc(100% - #{$sidebar-width});
     z-index: -1;
-
-    touch-action: none
+    zoom: 1;
 }
 
 .library-map-container--grabbing{

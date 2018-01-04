@@ -1,6 +1,6 @@
 import floors from '../locations/floors';
-// Calling this function selects relevant resources that are filtered accordingly
 
+// Calling this function selects relevant resources that are filtered accordingly
 const selectResources = (resources = [], {text, library, floor}) => {
     if(resources.length > 0){
 
@@ -16,10 +16,9 @@ const selectResources = (resources = [], {text, library, floor}) => {
             objects = objects.concat(results[i].resources);
         }
 
-        // FILTER BY FLOOR
-        // Filter by level len >= 3 .split('-')[1] == G
+        // Filter by floor
         objects = objects.filter((item) => {
-            // console.log(item);
+            // HACK: Hard coded to filter by getting floor
             const arr = item.name.split('-');
             if(arr.length == 3){
                 const codes = floors[library].filter((level) => {
@@ -34,6 +33,7 @@ const selectResources = (resources = [], {text, library, floor}) => {
         // Filter by text if library exists
         if(!!library){
             const textFiltered = objects.filter((resource) => {
+                // Finds matching excluding non-alphanumeric characters
                 const textMatch = resource.name
                 .toLowerCase().replace(/\W/g, '')
                 .includes(
@@ -41,7 +41,6 @@ const selectResources = (resources = [], {text, library, floor}) => {
                 );
                 return textMatch;
             });
-
             return textFiltered;
         }
         return objects;

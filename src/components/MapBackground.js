@@ -2,9 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux';
 import selectMap from '../selectors/map';
 
-import baillieuG from '../images/1.svg';
-const maps = baillieuG;
-
 const MapBackground = (props) => (
     <div>
         <img 

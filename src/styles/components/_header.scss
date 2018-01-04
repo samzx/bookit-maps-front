@@ -31,16 +31,16 @@
 
 .nav-item {
     color: $light-blue;
-    text-decoration: none;
-    line-height: $xl-size;
-    margin: auto $s-size auto $s-size;
     border-top: $t-size solid transparent;
     border-bottom: $t-size solid transparent;
+    line-height: $xl-size;
+    margin: auto $s-size auto $s-size;
+    text-decoration: none;
 }
 
 .nav-item__icon {
-    margin-right: $ss-size;
     margin-left: $ss-size;
+    margin-right: $ss-size;
 }
 
 .nav-item--is-active {
@@ -49,8 +49,8 @@
 }
 
 .nav-sign-out{
-    margin-left: auto;
     color: $off-white;
+    margin-left: auto;
 }
 
 .nav-item__description{
