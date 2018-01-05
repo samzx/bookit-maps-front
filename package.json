@@ -9,7 +9,7 @@
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "test": "jest",
-    "upload" : "scp -P21098 ./public/* solengyh@solexstudios.com:bookitmaps.samxie.net",
+    "upload": "scp -P21098 -r ./public/* solengyh@solexstudios.com:bookitmaps.samxie.net",
     "count": "cloc $(git ls-files)",
     "location-finder": "webpack-dev-server --entry ./src/tools/location-finder.js",
     "graph-generator": "webpack-dev-server --entry ./src/tools/graph-generator.js"
@@ -20,6 +20,7 @@
     "babel-loader": "7.1.1",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "base-64": "^0.1.0",

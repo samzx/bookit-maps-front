@@ -1,7 +1,12 @@
 const path = require("path"); //imports path
 
 module.exports = {
-    entry: "./src/app.js",
+    entry: {
+        bundle: [
+            'babel-polyfill',
+            './src/app.js'
+        ]
+    },
     output: {
         path: path.join(__dirname, "public"),
         filename: "bundle.js"
