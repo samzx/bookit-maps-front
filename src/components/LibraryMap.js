@@ -155,7 +155,6 @@ class LibraryMap extends React.Component{
                 
                 onWheel={(e) => this.handleZoom(e)}
             >
-                <div className="shadow" />
                 <div 
                     className="library-map"
                     draggable="false"
