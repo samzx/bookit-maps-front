@@ -50,8 +50,8 @@ class SignIn extends React.Component{
                 fetchBookingsToStore();
 
                 // Clean up
-                this.setState(() => {username: ""});
-                this.setState(() => {password: ""});
+                this.setState(() => ({username: ""}));
+                this.setState(() => ({password: ""}));
                 this.props.history.push("/");
             } else {
                 this.setState(() => {
