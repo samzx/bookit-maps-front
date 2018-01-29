@@ -6,6 +6,8 @@
     border-radius: 0.2rem;
     display: flex;
     font-weight: 300;
+    padding-left: $s-size;
+    -webkit-appearance: none;
     width: $sidebar-width*0.85;
 }
 
