@@ -3,6 +3,7 @@ const userReducerDefaultState = { username: "", baseAuth: "", hanging: false };
 export default (user = userReducerDefaultState, action) => {
     switch (action.type){
         case 'LOG_IN':
+            // TODO: Save in localStore to 'encrypt user and password'
             return  {
                 ...action.state,
                 username: action.username,
