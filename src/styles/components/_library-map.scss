@@ -1,4 +1,5 @@
 .library-map-container {
+    background: white;
     left: $sidebar-width; top: $header-height; right: 0; bottom: 0;
     height: calc(100% - #{$header-height});
     overflow: hidden;
