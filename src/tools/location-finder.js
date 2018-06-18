@@ -60,6 +60,7 @@ class LocationFinder extends React.Component {
         return (
             <div
                 onClick={(e) => this.handleLocation(e)}
+                style={{width: "fit-content"}}
             >
                 {
                     this.state.positions.map((pos, index)=> 

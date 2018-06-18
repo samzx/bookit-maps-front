@@ -2,10 +2,10 @@ const path = require("path"); //imports path
 
 module.exports = {
     entry: {
-        bundle: [
-            'babel-polyfill',
-            './src/app.js'
-        ]
+        // bundle: [
+        //     'babel-polyfill',
+        //     './src/app.js'
+        // ]
     },
     output: {
         path: path.join(__dirname, "public"),

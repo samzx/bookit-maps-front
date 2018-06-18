@@ -11,6 +11,7 @@ class MapOverlay extends React.Component{
     }
 
     createMarker = ({name, id, state}) => {
+        // Create marker based on Booth / Computer / Room
         try {
             return (
                 <Marker 
@@ -40,6 +41,8 @@ class MapOverlay extends React.Component{
                 return "darkorange";
             case "YOUR_BOOKING":
                 return "slateblue"
+            case "RESERVED":
+                return "orange"
             default:
                 return "crimson";
         }

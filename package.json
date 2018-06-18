@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --entry ./src/app.js",
     "test": "jest",
     "upload": "scp -P21098 -r ./public/* solengyh@solexstudios.com:bookitmaps.samxie.net",
     "count": "cloc $(git ls-files)",
