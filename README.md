@@ -6,7 +6,8 @@ Connects with the backend [api](https://github.com/cmbrad/studentit-mapit-api) t
 ![Demo](https://i.imgur.com/1HcCMzx.png)
 
 ## Demo
-https://bookitmaps.samxie.net/
+~https://bookitmaps.samxie.net/~
+No longer hosted
 * Make a booking at https://bookit.unimelb.edu.au
 * Sign in to BookIT Maps
 * Find the locaiton of your booking
