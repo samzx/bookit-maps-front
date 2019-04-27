@@ -1,6 +1,11 @@
 import { updateResources } from '../actions/resources';
+import { resources } from "../../demo-resources"
 
 const fetchResources = (store) => {
+    if (window.location.href.match(/.*\/demo$/)) {
+      store.dispatch(updateResources(resources))
+      return;
+    }
     const url = "https://sit-maps-api-dev.cy.id.au/resources/?format=json";
     
     fetch(url, {

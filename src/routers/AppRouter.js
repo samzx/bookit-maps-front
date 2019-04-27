@@ -15,6 +15,7 @@ const AppRouter = () => (
                 <Route path="/" component={Browse} exact={true} />
                 <Route path="/book" component={Book}/>
                 <Route path="/sign-in" component={SignIn}/>
+                <Route path="/demo" component={Browse}/>
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
