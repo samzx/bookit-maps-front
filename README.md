@@ -6,11 +6,11 @@ Connects with the backend [api](https://github.com/cmbrad/studentit-mapit-api) t
 ![Demo](https://i.imgur.com/1HcCMzx.png)
 
 ## Demo
-~https://bookitmaps.samxie.net/~
-No longer hosted
-* Make a booking at https://bookit.unimelb.edu.au
-* Sign in to BookIT Maps
-* Find the locaiton of your booking
+Update: Lean demo re-released
+
+http://bookitmaps.samxie.net/demo
+
+Since the back-end had its plug pulled, I re-released a lean front-end version (many features shaved) that users can play around with.
 
 ## Prerequisites
 
